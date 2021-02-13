@@ -37,8 +37,6 @@ a {
     margin: 30px auto;
 }
 .weather-app {
-    max-width: 600px;
-    margin: 30px auto;
     padding: 20px;
     border: 1px solid #dadde1;
     border-radius: 8px;
@@ -70,11 +68,6 @@ a {
     top: -34px;
 }
 
-#open-source {
-
-margin: 0 auto;
-display: block;
-}
 
 #description {
     text-transform: capitalize;
