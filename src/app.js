@@ -58,7 +58,8 @@ function displayTemperature(response) {
     windElement.innerHTML= Math.round(response.data.wind.speed);
 
     let feelElement = document.querySelector("#feel");
-    feelElement.innerHTML=Math.round(response.data.main.feels_like);
+    celsiusFeels=response.data.main.feels_like;
+    feelElement.innerHTML=Math.round(celsiusFeels);
 
     let dateElement = document.querySelector("#date");
     dateElement.innerHTML =  `${day} ${month} ${date} ${year}, ${hours}:${minutes}`;
@@ -89,6 +90,12 @@ function displayFahrenheitTemperature(event) {
     fahrenheitLink.classList.add("active");
    let fahrenheitTemperature = (celsiusTemperature * 9 / 5) + 32;
    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+
+   let fahrenheitFeelsElement = document.querySelector("#feel");
+   let fahrenheitFeels = (celsiusFeels * 9/ 5) + 32;
+   fahrenheitFeelsElement.innerHTML = Math.round(fahrenheitFeels);
+
+
 }
  function displayCelsiusTemperature(event) {
      event.preventDefault();
@@ -96,10 +103,14 @@ function displayFahrenheitTemperature(event) {
      celsiusLink.classList.add("active");
      let temperatureElement = document.querySelector("#temperature");
      temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+     let fahrenheitFeelsElement = document.querySelector("#feel");
+     fahrenheitFeelsElement.innerHTML = Math.round(celsiusFeels);
  }
 
 // Global Variables
 let celsiusTemperature = null;
+let celsiusFeels = null;
 
 let form= document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
