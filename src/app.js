@@ -66,7 +66,22 @@ function displayTemperature(response) {
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt",response.data.weather[0].description);
 }
-let apiKey="11c6b1943d69dd9ab2b79eb46ab8283b";
-let city="auckland";
-let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-axios.get(apiUrl).then(displayTemperature);
+
+function search(city) {
+    let apiKey="11c6b1943d69dd9ab2b79eb46ab8283b";
+    let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+    axios.get(apiUrl).then(displayTemperature);
+
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+
+    let cityInputElement= document.querySelector("#city-input");
+    search(cityInputElement.value);
+}
+    
+
+let form= document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
