@@ -41,14 +41,18 @@ hr {
     opacity: 0.7;   
     
 }
-.btn {
+.btn-dark {
     background-color: #2bb3a9; 
     border: white;
 }
 
+.btn-dark:hover {
+    background-color: #23978f 
+}
+
 .weather-app-wrapper {
     max-width: 600px;
-    margin: 80px auto;
+    margin: 30px auto;
     background-color: white;
 }
 .weather-app {
@@ -126,7 +130,7 @@ hr {
 #open-source {
     text-align: center;
     font-size: 13px;
-    margin-top: 10px;
+    margin-top: 0;
 }
 
 #country {
