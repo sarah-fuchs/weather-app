@@ -1,5 +1,7 @@
 body{
     font-family: arial, sans-serif;
+    background-image: url("https://i.dlpng.com/static/png/5487144-5-light-blue-watercolor-splash-background-jpg-onlygfxcom-blue-watercolor-splash-3492_2777_preview.png");
+    opacity: 0.99;
 }
 
 
@@ -31,14 +33,21 @@ a {
     text-decoration: none;
 }
 
-
+hr {
+    color:#2bb3a9;
+    ;
+}
+.btn {
+    background-color: #2bb3a9; 
+    border: white;
+}
 .weather-app-wrapper {
     max-width: 600px;
-    margin: 30px auto;
+    margin: 70px auto;
 }
 .weather-app {
     padding: 20px;
-    border: 1px solid #dadde1;
+    border: 2px solid #2bb3a9;
     border-radius: 8px;
 }
 
@@ -101,6 +110,8 @@ a {
     height: auto;
     line-height: 15px;
     white-space: nowrap;
+
+
   }.weather-forecast {
     margin-top: 10px;
   }
