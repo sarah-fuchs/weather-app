@@ -45,6 +45,7 @@ hr {
     background-color: #2bb3a9; 
     border: white;
 }
+
 .weather-app-wrapper {
     max-width: 600px;
     margin: 80px auto;
@@ -140,6 +141,6 @@ hr {
     position: fixed;
     bottom: 100px; 
     left: 10px;
-    opacity:0.15;
+    opacity:0.6;
     width: 500px;
 }
