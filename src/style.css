@@ -1,7 +1,9 @@
 body{
     font-family: arial, sans-serif;
-    background-image: url('https://i.dlpng.com/static/png/5487144-5-light-blue-watercolor-splash-background-jpg-onlygfxcom-blue-watercolor-splash-3492_2777_preview.png');
+    background-image: url(images/5487144-5-light-blue-watercolor-splash-background-jpg-onlygfxcom-blue-watercolor-splash-3492_2777_preview.png);
     opacity: 0.99;
+    background-size: 220%;
+    
 }
 
 
@@ -35,7 +37,9 @@ a {
 
 hr {
     color:#2bb3a9;
-    ;
+    border-top: 2px solid;
+    opacity: 0.7;   
+    
 }
 .btn {
     background-color: #2bb3a9; 
@@ -43,7 +47,8 @@ hr {
 }
 .weather-app-wrapper {
     max-width: 600px;
-    margin: 70px auto;
+    margin: 80px auto;
+    background-color: white;
 }
 .weather-app {
     padding: 20px;
@@ -52,7 +57,7 @@ hr {
 }
 
 .overview {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .weather-temperature img {
@@ -86,7 +91,7 @@ hr {
   }
   
   .weather-forecast h3 {
-    color: rgb(186, 186, 186);
+    color: #878787;
     font-size: 14px;
     font-weight: 400;
     text-align: center;
@@ -100,37 +105,7 @@ hr {
     margin: 0 auto;
     height: 48px;
     width: 48px;
-  }
-  
-  .weather-forecast-temperature {
-    text-align: center;
-    color: rgb(135, 135, 135);
-    font-size: 13px;
-    font-weight: 400;
-    height: auto;
-    line-height: 15px;
-    white-space: nowrap;
-
-
-  }.weather-forecast {
-    margin-top: 10px;
-  }
-  
-  .weather-forecast h3 {
-    color: rgb(186, 186, 186);
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
-    height: 15px;
-    line-height: 15px;
-    padding-top: 7px;
-  }
-  
-  .weather-forecast img {
-    display: block;
-    margin: 0 auto;
-    height: 48px;
-    width: 48px;
+    opacity: 1;
   }
   
   .weather-forecast-temperature {
@@ -142,6 +117,7 @@ hr {
     line-height: 15px;
     white-space: nowrap;
   }
+
 #description {
     text-transform: capitalize;
 }
@@ -160,3 +136,10 @@ hr {
     margin-bottom: 0;
 }
 
+#weathergirl {
+    position: fixed;
+    bottom: 100px; 
+    left: 10px;
+    opacity:0.15;
+    width: 500px;
+}
