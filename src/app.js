@@ -55,7 +55,7 @@ function formatHours(timestamp) {
     if (minutes < 10) {
       minutes = `0${minutes}`;
     }
-  
+ 
     return `${hours}:${minutes}`;
 
 }
@@ -94,19 +94,23 @@ function displayTemperature(response) {
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt",response.data.weather[0].description);
+
+  
+  
 }
 function displayForecast(response) {
     let forecastElement = document.querySelector("#forecast");
     forecastElement.innerHTML = null;
     let forecast = null;
-    
+   
     for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
+    let localTimestamp = forecast.dt + response.data.city.timezone;
  
     forecastElement.innerHTML  += `
     <div class="col-2">
     <h3>
-    ${formatHours(forecast.dt * 1000)}
+    ${formatHours(localTimestamp * 1000)}
     </h3>
     <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" />
     <div class="weather-forecast-temperature">
