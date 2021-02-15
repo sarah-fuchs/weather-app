@@ -92,7 +92,7 @@ function displayTemperature(response) {
       response.data.timezone);
       
     let iconElement = document.querySelector("#icon");
-    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("src", `src/images/${response.data.weather[0].icon}.svg`);
     iconElement.setAttribute("alt",response.data.weather[0].description);
 
   
@@ -112,7 +112,9 @@ function displayForecast(response) {
     <h3>
     ${formatHours(localTimestamp * 1000)}
     </h3>
-    <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" />
+    <img src="src/images/${
+      forecast.weather[0].icon
+    }.svg" class="forecast-images" style="width:60px;height:60px;padding:5px"/>
     <div class="weather-forecast-temperature">
     <strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(forecast.main.temp_min)}°    
     </div>
@@ -177,4 +179,4 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
-search("Auckland");
+search("Vienna");
