@@ -1,7 +1,13 @@
 //Date 
-      let now = new Date();
+    function formatDate (date, timezone) {
+      let localOffsetInMs = date.getTimezoneOffset() * 60 * 1000;
+      let targetOffsetInMs = timezone * 1000;
+      let targetTimestamp = date.getTime() + localOffsetInMs + targetOffsetInMs;
 
-      let date = now.getDate();
+      
+      let now = new Date(targetTimestamp);
+
+      let dayIndex = now.getDate();
       let hours = now.getHours();
       if (hours < 10) {
         hours = `0${hours}`;
@@ -36,7 +42,8 @@
         `December`
       ];
       let month = months[now.getMonth()];
-
+      return  `${day} ${month} ${dayIndex} ${year}, ${hours}:${minutes}`;
+    }
 // Hours for Forecasts
 function formatHours(timestamp) {
     let date = new Date(timestamp);
@@ -79,8 +86,10 @@ function displayTemperature(response) {
     celsiusFeels=response.data.main.feels_like;
     feelElement.innerHTML=Math.round(celsiusFeels);
 
-    let dateElement = document.querySelector("#date");
-    dateElement.innerHTML =  `${day} ${month} ${date} ${year}, ${hours}:${minutes}`;
+     let dateElement=document.querySelector("#date")
+     dateElement.innerHTML = formatDate(
+      new Date(),
+      response.data.timezone);
       
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
@@ -162,4 +171,6 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink=document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
+let dateElement = document.querySelector("#date");
+let currentTime = new Date();
 search("Auckland");
